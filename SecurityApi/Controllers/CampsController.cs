@@ -7,7 +7,7 @@ namespace SecurityCoreApi.Controllers
     public class CampsController : Controller
     {
         private ICampRepository campRepository { get; set; }
-        public CampsController (ICampRepository _campRepository)
+        public CampsController(ICampRepository _campRepository)
         {
             campRepository = _campRepository;
         }
@@ -15,7 +15,8 @@ namespace SecurityCoreApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok();
+            var camps = campRepository.GetAllCamps();
+            return Ok(camps);
         }
     }
 }
