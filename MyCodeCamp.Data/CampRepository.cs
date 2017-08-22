@@ -149,8 +149,6 @@ namespace MyCodeCamp.Data
     public CampUser GetUser(string userName)
     {
       return _context.Users
-        .Include(u => u.Claims)
-        .Include(u => u.Roles)
         .Where(u => u.UserName == userName)
         .Cast<CampUser>()
         .FirstOrDefault();

@@ -16,10 +16,10 @@ namespace SecurityApi
     {
         public Startup(IConfiguration configuration)
         {
-            config = configuration;
+            config = (IConfigurationRoot)configuration;
         }
 
-        private IConfiguration config { get; }
+        private IConfigurationRoot config { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
